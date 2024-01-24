@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulačka</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="kalkulačka.css">
+</head>
+<body>
+    <div id="kal">
+        <input type="text" id="display" disabled>
+        <div class="operator-row">
+            <button onclick="c()" class="clear">C</button>
+            <button onclick="a('/')">/</button>
+            <button onclick="a('*')">*</button>
+            <button onclick="a('+')">+</button>
+            <button onclick="a('-')">-</button>
+        </div>
+        <div class="operator-row">
+            <button onclick="fib()">fib</button>
+            <button onclick="sin()">sin</button>
+            <button onclick="cos()">cos</button>
+            <button onclick="log()">log</button>
+        </div>
+        <div class="operator-row">
+            <button onclick="a('7')">7</button>
+            <button onclick="a('8')">8</button>
+            <button onclick="a('9')">9</button>
+        </div>
+        <div class="operator-row">
+            <button onclick="a('4')">4</button>
+            <button onclick="a('5')">5</button>
+            <button onclick="a('6')">6</button>
+        </div>
+        <div class="operator-row">
+            <button onclick="a('1')">1</button>
+            <button onclick="a('2')">2</button>
+            <button onclick="a('3')">3</button>
+        </div>
+        <div class="operator-row">
+            <button onclick="a('0')">0</button>
+            <button onclick="a('.')">.</button>
+            <button onclick="r()" class="equal">=</button>
+        </div>
+    </div>
+
+<script>
+    function a(v) { d('display').value += v; }
+        function c() { d('display').value = ''; }
+        function r() { d('display').value = e(d('display').value); }
+
+        function fact() { 
+            var v = p(d('display').value);
+            var r = 1;
+            for (var i = 2; i <= v; i++) { r *= i; }
+            d('display').value = r;
+        }
+
+        function fib() {
+            var n = p(d('display').value), a = 0, b = 1, t;
+            for (var i = 2; i <= n; i++) { t = a + b; a = b; b = t; }
+            d('display').value = n > 0 ? b : a;
+        }   
+
+        function sin() {
+            var n = p(d('display').value)
+            d('display').value = Math.sin((n*Math.PI)/180)
+        }
+
+        function cos() {
+            var n = p(d('display').value)
+            d('display').value = Math.cos(n)
+        }
+
+        function log() {
+            var n = p(d('display').value)
+            d('display').value = Math.log(n)
+        }
+
+        function d(id) { return document.getElementById(id); }
+        function e(expr) { return eval(expr); }
+        function p(value) { return parseInt(value); }
+    </script>
+</body>
+</html>

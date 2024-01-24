@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#kal {
+    width: 356px;
+    background-color: #d4d3d386;
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#display {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.operator-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 900px;
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.operator {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button.equal {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+button.clear {
+    background-color: #e74c3c;
+    color: #fff;
+}
